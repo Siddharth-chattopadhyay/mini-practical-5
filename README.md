@@ -1,4 +1,4 @@
 # mini-practical-5
 
 ## Output
-<img width="362" height="644" alt="1" src="https://github.com/user-attachments/assets/7ec1144a-7d91-40bc-94e0-55d8ccbbdca7" />
+<img width="298" height="506" alt="1" src="https://github.com/user-attachments/assets/4375a31c-d79c-4ae7-88ab-fb31b8afc01f" />
