@@ -15,49 +15,59 @@ int choice(){
     return choice;
 }
 
-void calculate(int choice, int firstNumber, int secondNumber){
+int getNumbers(string message){
+    int num;
+    cout << message;
+    cin >> num;
+    return num;
+}
+
+bool calculate(int choice){
+    int firstNumber, secondNumber;
+    if (choice > 0 && choice <= 5){
+        firstNumber = getNumbers("Enter first number: ");
+        secondNumber = getNumbers("Enter second number: ");
+    }
+    cout << endl;
     switch (choice){
         case 0:
             cout << "Thank you for using calculator." << endl;
+            return false;
             break;
 
         case 1:
-            cout << "Addition of " << firstNumber << " and " << secondNumber << " is " << firstNumber + secondNumber << endl;
+            cout << "Addition of " << firstNumber << " and " << secondNumber << " is " << firstNumber + secondNumber << endl << endl;
+            return true;
             break;
 
         case 2:
-            cout << "Substraction of " << firstNumber << " and " << secondNumber << " is " << firstNumber - secondNumber << endl;
+            cout << "Substraction of " << firstNumber << " and " << secondNumber << " is " << firstNumber - secondNumber << endl << endl;
+            return true;
             break;
 
         case 3:
-            cout << "Multiplication of " << firstNumber << " and " << secondNumber << " is " << firstNumber * secondNumber << endl;
+            cout << "Multiplication of " << firstNumber << " and " << secondNumber << " is " << firstNumber * secondNumber << endl << endl;
+            return true;
             break;
 
         case 4:
-            cout << "Division of " << firstNumber << " and " << secondNumber << " is " << firstNumber / secondNumber << endl;
+            cout << "Division of " << firstNumber << " and " << secondNumber << " is " << firstNumber / secondNumber << endl << endl;
+            return true;
             break;
 
         case 5:
-            cout << "Modulas of " << firstNumber << " and " << secondNumber << " is " << firstNumber % secondNumber << endl;
+            cout << "Modulas of " << firstNumber << " and " << secondNumber << " is " << firstNumber % secondNumber << endl << endl;
+            return true;
+            break;
+
+        default:
+            cout << "Invalid choice ... try again" << endl << endl;
+            return true;
             break;
     }
 }
 
 int main(){
-    int firstNumber, secondNumber, choice_;
-    bool repeat;
-    do {
-        choice_ = choice();
-        if (choice_ != 0){
-            cout << "Enter first number: ";
-            cin >> firstNumber;
-
-            cout << "Enter second number: ";
-            cin >> secondNumber;
-        }
-
-        calculate(choice_, firstNumber, secondNumber);
-        cout << endl;
-    }while(choice_);
+    while(calculate(choice())){}
     return 0;
 }
